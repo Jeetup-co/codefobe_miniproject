@@ -1,3 +1,8 @@
+# -------------------------------
+# 📚 Online Bookstore System
+# -------------------------------
+
+# Initialize BookStore
 BookStore = [
     ("Rich Dad Poor Dad","Robert T. Kiyosaki",1997,"Business"),
     ("The Alchemist","Paulo Coelho",1988,"Fiction"),
@@ -6,7 +11,7 @@ BookStore = [
     ("The Lord of the Rings","J.R.R. Tolkien",1954,"Fantasy"),
 ]
 
-print("\nList of all books")
+print("\n📚 List of all books")
 if not BookStore:
   print("BookStore is empty")
 else:
@@ -24,10 +29,10 @@ genre = input("Enter genre of book: ")
 
 existing_book = {book[0] for book in BookStore}
 if title in existing_book:
-  print("Book already exists")
+  print("❌ Book already exists")
 else:
   BookStore.append((title,auther,year,genre))
-  print("Book is added to BookStore")
+  print("✅ Book is added to BookStore")
 
 print("\nList of all books")
 if not BookStore:
@@ -45,8 +50,11 @@ title_2_remove = input("Enter title of book to remove: ")
 for book in BookStore:
   if book[0] == title_2_remove:
     BookStore.remove(book)
-    print("Book is removed from BookStore")
+    print("✅ Book is removed from BookStore")
     break
+else:
+    print("❌ Book not found")
+
 
 print("\nList of all books")
 if not BookStore:
@@ -60,7 +68,7 @@ else:
 # Unique Value Display
 
 Unique_Book = {book[3] for book in BookStore}
-print("\nUnique genre Book")
+print("\n🎭 Unique genre Book")
 for genre in Unique_Book:
   print(genre)
 
@@ -72,6 +80,8 @@ else:
   print("BookStore contains the following books:")
   for title,auther,year,genre in BookStore:
     print(f"title: {title}, auther: {auther}, year: {year}, genre: {genre}")
+
+# Update 
 
 
 title_update = input("Enter title of book to update: ")
@@ -90,13 +100,13 @@ for index,book in enumerate(BookStore):
     elif detail_to_update == "genre":
       book_list[3] = new_value
     else:
-      print("Invalid detail to update")
+      print("❌ Invalid detail to update")
       break
     BookStore[index] = tuple(book_list)
-    print(f"Book is updated {title_update} with {detail_to_update} : {new_value}")
+    print(f"✅ Book is updated {title_update} with {detail_to_update} : {new_value}")
     break
   else:
-    print(f"{title_update} is not found in BookStore")
+    print(f"❌{title_update} is not found in BookStore")
 
 print("\nList of all books")
 if not BookStore:
